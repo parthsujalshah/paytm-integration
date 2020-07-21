@@ -1,0 +1,25 @@
+<html>
+
+<head>
+    <title>Merchant Check Out Page</title>
+</head>
+
+<body>
+    <center>
+        <h1>Please do not refresh this page...</h1>
+    </center>
+    <form method="post" action={{url}} name="paytm">
+        <table border="1">
+            <tbody>
+                {%for param in paytmParams%}
+                <input type="hidden" name={{param}} value={{paytmParams[param]}}>
+                {%endfor%}
+            </tbody>
+        </table>
+        <script type="text/javascript">
+            document.paytm.submit();
+        </script>
+    </form>
+</body>
+
+</html>
