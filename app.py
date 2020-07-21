@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 app = Flask(__name__)
 from dotenv import load_dotenv
 from os import path, environ
@@ -34,8 +34,8 @@ def payment_make():
 
 @app.route('/payment/callback', methods=['GET', 'POST'])
 def payment_callback():
-    print(request)
-    return 'hi'
+    print(request.form)
+    return request.form
 
 
 if __name__ == "__main__":
